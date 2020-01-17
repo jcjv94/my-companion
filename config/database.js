@@ -6,6 +6,8 @@ mongoose.connect(process.env.DATABASE_URL, {
     useCreateIndex: true
   });
 
-  db.once('connected', () => {
-    console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
-  });
+const db = mongoose.connection;
+
+db.once('connected', () => {
+console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
+});
