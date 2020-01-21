@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
-import Nav from '../../components/Nav/Nav';
+// import Nav from '../../components/Nav/Nav';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
+import Dashboard from '../Dashboard/Dashboard';
 
 class App extends Component {
   constructor() {
@@ -39,7 +40,11 @@ class App extends Component {
       <Switch>
         
       <Route exact path='/' render={() =>
-            <Nav/>
+        <Dashboard
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+         
+        />
       }/>
       <Route exact path='/login' render={({ history }) => 
             <LoginPage
