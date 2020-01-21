@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import * as dogAPI from '../../utils/dogs-api';
 // import logo from './logo.svg';
 import './App.css';
 // import Nav from '../../components/Nav/Nav';
@@ -8,11 +9,13 @@ import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
 import Dashboard from '../Dashboard/Dashboard';
 
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       ...this.getInitialState(),
+      dogs: [],
       user: userService.getUser()
     };
   }
@@ -32,17 +35,37 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  handleAddDog = async newDogData => {
+    const newDog = await dogAPI.create(newDogData);
+    this.setState(state => ({
+      dogs: [...state.dogs, newDog]
+    }),
+    () => this.props.history.push('/'));
+  }
+
+
+  async componentDidMount() {
+    const dogs = await dogAPI.getAll();
+    this.setState({dogs});
+  }
+
 
   render() {
     return (
       <>
-      <header>My Companion</header>
+      <header>
+        My Companion
+        <nav>
+      test
+        </nav>
+      </header>
       <Switch>
         
       <Route exact path='/' render={() =>
         <Dashboard
         user={this.state.user}
         handleLogout={this.handleLogout}
+        handleAddDog={this.handleAddDog}
          
         />
       }/>

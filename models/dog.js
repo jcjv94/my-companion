@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const dogSchema = new Schema({
-    dogName: String,
-    numWalks: Number,
-    numFeedings: Number,
-    numMeds: Number
+    dogName: {type: String, required: true},
+    breed: {type: String, default: 'Mixed'},
+    age: {type: Number, default: 0},
+    numWalks: {type: Number, default: 0},
+    numFeedings: {type: Number, default: 2},
+    numMeds: {type: Number, default: 0},
 },{
     timestamps: true
 });
