@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './DogGroup.css';
+import Notes from '../../components/Notes/Notes';
 
 function DogGroup({dogs, handleDeleteDog}) {
     return (
@@ -41,6 +42,7 @@ function DogGroup({dogs, handleDeleteDog}) {
                     </tr>
                 </table>
                     <br/>
+                    <Notes />
                 </>
                 );
                 
