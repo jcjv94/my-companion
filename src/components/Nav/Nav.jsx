@@ -6,8 +6,8 @@ import './Nav.css'
 const Nav = (props) => {
   let nav = props.user ?
     <div>
- <Link to='/dogs' className='Nav-link'>Dogs</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ {/* <Link to='/dogs' className='Nav-link'>Dogs</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
       <Link to='' className='Nav-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='Nav-welcome'>WELCOME, {props.user.name}</span>

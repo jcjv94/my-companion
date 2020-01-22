@@ -43,6 +43,13 @@ class App extends Component {
     () => this.props.history.push('/'));
   }
 
+  handleDeleteDog= async id => {
+    await dogAPI.deleteOne(id);
+    this.setState(state => ({
+      dogs: state.dogs.filter(p => p._id !== id)
+    }), () => this.props.history.push('/'));
+  }
+
 
   async componentDidMount() {
     const dogs = await dogAPI.getAll();
@@ -62,10 +69,13 @@ class App extends Component {
       <Switch>
         
       <Route exact path='/' render={() =>
+      
         <Dashboard
         user={this.state.user}
+        dogs={this.state.dogs}
         handleLogout={this.handleLogout}
         handleAddDog={this.handleAddDog}
+        handleDeleteDog={this.handleDeleteDog}
          
         />
       }/>
