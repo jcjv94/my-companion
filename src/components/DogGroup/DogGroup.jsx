@@ -6,6 +6,7 @@ import Notes from '../../components/Notes/Notes';
 function DogGroup({dogs, handleDeleteDog}) {
     return (
         <>
+        <div class="container">
         {
             dogs.map(dog => {
                 return (
@@ -18,6 +19,8 @@ function DogGroup({dogs, handleDeleteDog}) {
                         <th>Walks</th>
                         <th>Feedings</th>
                         <th>Medications</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <tr>
                         <td>{dog.dogName}</td>
@@ -42,13 +45,15 @@ function DogGroup({dogs, handleDeleteDog}) {
                     </tr>
                 </table>
                     <br/>
-                    <Notes />
+                    <Notes 
+                    dog={dog}
+                    />
                 </>
                 );
                 
             })
         }
-
+</div>
         </>
     );
 }

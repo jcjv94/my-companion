@@ -1,40 +1,42 @@
 import React, {Component} from 'react';
 // import {Link} from 'react-router-dom';
+import * as dogAPI from '../../utils/dogs-api';
 import './Notes.css';
 
 class Notes extends Component {
 
-    // state = {
-    //     invalidForm: false,
-    //     formData: this.props.location.state.dog
-    // };
+    state = {
+        notes: [],
+        newNotes: ''
+    };
 
-    // handleSubmit = e => {
-    //     e.preventDefault();
-    //     this.props.handleUpdateCmnt(this.state.formData);
-    // };
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log('HITTING!!!!!')
+        dogAPI.addNote(this.state.newNotes, this.props.dog._id)
+    };
 
-    // handleChange = e => {
-    //     const formData = {...this.state.formData, [e.target.name]: e.target.value};
-    //     this.setState({
-    //         formData,
-    //         invalidForm: !this.formRef.current.checkValidity()
-    //     });
-    // };
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
     render () {
         return (
             <>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label>Notes</label>
-                <textarea placeholder='Leave a Note'></textarea>
+                <textarea placeholder='Leave a Note' class="materialize-textarea" name="newNotes" onChange={this.handleChange}></textarea>
                 <br/>
+                <div class="center-align">
                 <button
                     type="submit"
                     // disabled={this.state.invalidForm}
                     >
                         Save Notes
                     </button>
+                    </div>
                     {/* <Link to='/'>CANCEL</Link> */}
             </form>
             </>

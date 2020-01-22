@@ -31,9 +31,9 @@ class AddDogPage extends Component {
     render() {
         return (
             <>
-                <h1> Add Dog </h1>
-                <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-                    <div>
+                <h4 class="center-align"> Add Dog </h4>
+                <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit} class="container row">
+                    <div class="col s4">
                         <label>Dog's Name: </label>
                         <input
                         className="form-control"
@@ -43,7 +43,7 @@ class AddDogPage extends Component {
                         required
                         />
                     </div>
-                    <div>
+                    <div class="col s4">
                         <label>Breed: </label>
                         <input
                         className="form-control"
@@ -53,7 +53,7 @@ class AddDogPage extends Component {
                         required
                         />
                     </div>
-                    <div>
+                    <div class="col s4">
                         <label>Age: </label>
                         <input
                         className="form-control"
@@ -63,7 +63,7 @@ class AddDogPage extends Component {
                         required
                         />
                     </div>
-                    <div>
+                    <div class="col s4">
                         <label>Number of Daily Walks: </label>
                         <input
                         className="form-control"
@@ -73,7 +73,7 @@ class AddDogPage extends Component {
                         required
                         />
                     </div>
-                    <div>
+                    <div class="col s4">
                         <label>Number of Daily Feedings: </label>
                         <input
                         className="form-control"
@@ -83,7 +83,7 @@ class AddDogPage extends Component {
                         required
                         />
                     </div>
-                    <div>
+                    <div class="col s4">
                         <label>Number of Daily Medications: </label>
                         <input
                         className="form-control"
@@ -93,12 +93,14 @@ class AddDogPage extends Component {
                         
                         />
                     </div>
+                    <div class="center-align">
                     <button
                     type="submit"
                     disabled={this.state.invalidForm}
                     >
                         Add Dog
                     </button>
+                    </div>
                 </form>
             </>
         );

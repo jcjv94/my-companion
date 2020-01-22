@@ -5,7 +5,8 @@ module.exports = {
     show,
     create,
     delete: deleteOne,
-    update
+    update,
+    addNote
 };
 
 async function index (req, res) {
@@ -32,4 +33,12 @@ async function show(req, res) {
   async function update(req, res) {
     const updatedDog = await Dog.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.status(200).json(updatedDog);
+  }
+
+  async function addNote(req, res) {
+    console.log('HITTING!!!!!!!!!!!!!!')
+    const dog = await Dog.findById(req.params.id);
+    console.log(dog);
+    console.log(req.body);
+
   }

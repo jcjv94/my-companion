@@ -7,5 +7,6 @@ router.get('/:id', dogsCtrl.show);
 router.post('/', dogsCtrl.create);
 router.delete('/:id', dogsCtrl.delete);
 router.put('/:id', dogsCtrl.update);
+router.put('/notes/:id', dogsCtrl.addNote);
 
 module.exports = router;

@@ -8,6 +8,7 @@ const dogSchema = new Schema({
     numWalks: {type: Number, default: 0},
     numFeedings: {type: Number, default: 2},
     numMeds: {type: Number, default: 0},
+    notes: [ String ]
 },{
     timestamps: true
 });

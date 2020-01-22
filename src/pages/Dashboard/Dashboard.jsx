@@ -10,6 +10,7 @@ import DogGroup from '../../components/DogGroup/DogGroup';
 const Dashboard = (props) => {
     return (
         <>
+        <div class="container">
         <Nav 
         user={props.user}
         handleLogout={props.handleLogout}
@@ -44,6 +45,7 @@ const Dashboard = (props) => {
         <footer className='header-footer'>
         this is a footer
       </footer>
+      </div>
         </>
     );
 };

@@ -26,4 +26,11 @@ export function deleteOne(id) {
       method: 'DELETE'
     }).then(res => res.json());
   }
-  
+
+  export function addNote(note, id) {
+    return fetch(`${BASE_URL}/notes/${id}`, {
+        method: 'PUT',
+        headers:{'content-type': 'application/json'},
+        body:JSON.stringify(note)
+    }).then(res => res.json());
+  }
