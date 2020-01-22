@@ -31,6 +31,6 @@ export function deleteOne(id) {
     return fetch(`${BASE_URL}/notes/${id}`, {
         method: 'PUT',
         headers:{'content-type': 'application/json'},
-        body:JSON.stringify(note)
+        body:JSON.stringify({note})
     }).then(res => res.json());
   }

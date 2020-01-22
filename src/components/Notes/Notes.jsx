@@ -10,10 +10,13 @@ class Notes extends Component {
         newNotes: ''
     };
 
-    handleSubmit = e => {
+    handleSubmit = async(e) => {
         e.preventDefault();
-        console.log('HITTING!!!!!')
-        dogAPI.addNote(this.state.newNotes, this.props.dog._id)
+        const updatedNotes = await dogAPI.addNote(this.state.newNotes, this.props.dog._id)
+        console.log(updatedNotes)
+        this.setState({
+            notes: updatedNotes
+        })
     };
 
     handleChange = e => {
@@ -21,6 +24,12 @@ class Notes extends Component {
             [e.target.name]: e.target.value
         });
     };
+
+    componentDidMount() {
+        this.setState({
+            notes: this.props.dog.notes
+        })
+    }
 
     render () {
         return (
@@ -39,6 +48,14 @@ class Notes extends Component {
                     </div>
                     {/* <Link to='/'>CANCEL</Link> */}
             </form>
+
+            {
+                this.state.notes.map(note => {
+                    return(
+                        <p>{note}</p>
+                    )
+                })
+            }
             </>
         )
     }

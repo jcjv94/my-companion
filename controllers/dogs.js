@@ -36,9 +36,8 @@ async function show(req, res) {
   }
 
   async function addNote(req, res) {
-    console.log('HITTING!!!!!!!!!!!!!!')
     const dog = await Dog.findById(req.params.id);
-    console.log(dog);
-    console.log(req.body);
-
+    dog.notes.push(req.body.note)
+    dog.save();
+    res.status(200).json(dog.notes);
   }
