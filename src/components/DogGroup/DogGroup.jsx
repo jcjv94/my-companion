@@ -9,23 +9,33 @@ function DogGroup(props) {
             props.dogs.map(dog => {
                 return (
                 <>
-                    <h3>{dog.dogName}</h3>
-                    <h3>{dog.breed}</h3>
-                    <h3>{dog.age}</h3>
-                    <h3>{dog.numWalks}</h3>
-                    <h3>{dog.numFeedings}</h3>
-                    <h3>{dog.numMeds}</h3>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Breed</th>
+                        <th>Age</th>
+                        <th>Walks</th>
+                        <th>Feedings</th>
+                        <th>Medications</th>
+                    </tr>
+                    <tr>
+                        <td>{dog.dogName}</td>
+                        <td>{dog.breed}</td>
+                        <td>{dog.age}</td>
+                        <td>{dog.numWalks}</td>
+                        <td>{dog.numFeedings}</td>
+                        <td>{dog.numMeds}</td>
+                        <td><Link>Details </Link></td>
+                        <td><Link>Edit</Link></td>
+                        <td><Link>Delete</Link></td>
+                    </tr>
+                </table>
                     <br/>
                 </>
                 );
                 
             })
         }
-
-
-        <Link>Details </Link>
-
-        <Link>Edit</Link>
 
         {/* <button onClick={() => handleDeleteDog(dog._id)}>Delete</button> */}
 
