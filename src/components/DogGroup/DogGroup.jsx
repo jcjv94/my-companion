@@ -8,9 +8,16 @@ function DogGroup(props) {
         {
             props.dogs.map(dog => {
                 return (
+                <>
                     <h3>{dog.dogName}</h3>
-
-                )
+                    <h3>{dog.breed}</h3>
+                    <h3>{dog.age}</h3>
+                    <h3>{dog.numWalks}</h3>
+                    <h3>{dog.numFeedings}</h3>
+                    <h3>{dog.numMeds}</h3>
+                    <br/>
+                </>
+                );
                 
             })
         }

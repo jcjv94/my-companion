@@ -4,6 +4,7 @@ import Nav from '../../components/Nav/Nav';
 import './Dashboard.css';
 import AddDogPage from '../AddDogPage/AddDogPage';
 import DogGroup from '../../components/DogGroup/DogGroup';
+import { Route, Switch } from 'react-router-dom';
 
 const Dashboard = (props) => {
     return (
@@ -13,17 +14,27 @@ const Dashboard = (props) => {
         handleLogout={props.handleLogout}
         />
 
-        <AddDogPage 
-        handleAddDog={props.handleAddDog}
-        />
+    <Switch>/
 
-        <DogGroup
-        dogs = {props.dogs}
-        handleDeleteDog={props.handleDeleteDog}
-        />
+        <Route exact path='/dashboard/AddDogPage' render={({ history }) =>
+            <AddDogPage 
+            history={history}
+            handleAddDog={props.handleAddDog}
+            />
+        }/>
+
+        <Route exact path='/dashboard/DogGroup' render={({ history }) =>
+            <DogGroup
+            dogs = {props.dogs}
+            history={history}
+            handleDeleteDog={props.handleDeleteDog}
+            />
+         }/>
+
+    </Switch>
 
         <footer className='header-footer'>
-        this is a footer
+       footer
       </footer>
         </>
     );
