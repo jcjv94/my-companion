@@ -97,8 +97,9 @@ class AddDogPage extends Component {
                     <button
                     type="submit"
                     disabled={this.state.invalidForm}
+                    class="btn"
                     >
-                        Add Dog
+                        Add<i class="material-icons ">add</i>
                     </button>
                     </div>
                 </form>

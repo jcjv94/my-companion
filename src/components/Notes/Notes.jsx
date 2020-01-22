@@ -41,9 +41,10 @@ class Notes extends Component {
                 <div class="center-align">
                 <button
                     type="submit"
+                    class="btn"
                     // disabled={this.state.invalidForm}
                     >
-                        Save Notes
+                        Save 
                     </button>
                     </div>
                     {/* <Link to='/'>CANCEL</Link> */}
