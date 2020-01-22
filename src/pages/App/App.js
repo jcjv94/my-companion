@@ -8,6 +8,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
 import Dashboard from '../Dashboard/Dashboard';
+import EditDogPage from '../EditDogPage/EditDogPage';
 
 
 class App extends Component {
@@ -43,6 +44,17 @@ class App extends Component {
     () => this.props.history.push('/'));
   }
 
+  handleUpdateDog = async updatedDogData => {
+    const updatedDog = await dogAPI.update(updatedDogData);
+    const newDogsArray = this.state.dogs.map(p => 
+      p._id === updatedDog._id ? updatedDog : p
+    );
+    this.setState(
+      {dogs: newDogsArray},
+      () => this.props.history.push('/')
+    );
+  }
+
   handleDeleteDog= async id => {
     await dogAPI.deleteOne(id);
     this.setState(state => ({
@@ -76,6 +88,7 @@ class App extends Component {
         handleLogout={this.handleLogout}
         handleAddDog={this.handleAddDog}
         handleDeleteDog={this.handleDeleteDog}
+        handleUpdateDog={this.handleUpdateDog}
          
         />
       }/>
@@ -89,6 +102,12 @@ class App extends Component {
             <SignupPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+      <Route exact path='/edit' render={({ location }) => 
+            <EditDogPage
+            handleUpdateDog={this.handleUpdateDog}
+            location={location}
             />
           }/>
 

@@ -3,7 +3,8 @@ import Nav from '../../components/Nav/Nav';
 import './Dashboard.css';
 import AddDogPage from '../AddDogPage/AddDogPage';
 import DogGroup from '../../components/DogGroup/DogGroup';
-import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
+// import EditDogPage from '../EditDogPage/EditDogPage';
 
 const Dashboard = (props) => {
     return (
@@ -37,7 +38,11 @@ const Dashboard = (props) => {
             handleDeleteDog={props.handleDeleteDog}
             />
          }/> */}
-
+    {/* <EditDogPage 
+    dogs = {props.dogs}
+    handleUpdateDog = {props.handleUpdateDog}
+    location = {props.location}
+    /> */}
     {/* </Switch> */}
 
         <footer className='header-footer'>

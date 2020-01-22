@@ -30,6 +30,6 @@ async function show(req, res) {
   }
   
   async function update(req, res) {
-    const updatedDog = await D0g.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedDog = await Dog.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.status(200).json(updatedDog);
   }

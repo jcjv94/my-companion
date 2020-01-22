@@ -2,11 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './DogGroup.css';
 
-function DogGroup(props) {
+function DogGroup({dogs, handleDeleteDog}) {
     return (
         <>
         {
-            props.dogs.map(dog => {
+            dogs.map(dog => {
                 return (
                 <>
                 <table>
@@ -25,9 +25,19 @@ function DogGroup(props) {
                         <td>{dog.numWalks}</td>
                         <td>{dog.numFeedings}</td>
                         <td>{dog.numMeds}</td>
-                        <td><Link>Details </Link></td>
-                        <td><Link>Edit</Link></td>
-                        <td><Link>Delete</Link></td>
+                        {/* <td><Link>Details </Link></td> */}
+                        <td>
+                            <Link 
+                            to={{
+                                pathname: '/edit',
+                                state: {dog}
+                              }}>
+                            Edit
+                            </Link>
+                        </td>
+                        <td> 
+                            <button onClick={() => handleDeleteDog(dog._id)}>Delete</button> 
+                        </td>
                     </tr>
                 </table>
                     <br/>
@@ -36,8 +46,6 @@ function DogGroup(props) {
                 
             })
         }
-
-        {/* <button onClick={() => handleDeleteDog(dog._id)}>Delete</button> */}
 
         </>
     );
