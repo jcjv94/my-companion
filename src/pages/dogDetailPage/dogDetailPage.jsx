@@ -9,38 +9,39 @@ class dogDetailPage extends Component {
       <>
         <table>
           <tr>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Age</th>
-            <th>Walks</th>
-            <th>Feedings</th>
-            <th>Medications</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th class="center-align">Name: {this.props.dog.dogName}</th>
+            <th class="center-align">Breed: {this.props.dog.breed}</th>
+            <th class="center-align">Age: {this.props.dog.age}</th>
+            <th class="center-align">Walks: {this.props.dog.numWalks}</th>
+            <th class="center-align">Feedings: {this.props.dog.numFeedings}</th>
+            <th class="center-align">Medications: {this.props.dog.numMeds}</th>
+            <th class="center-align">Edit</th>
+            <th class="center-align">Delete</th>
           </tr>
           <tr>
-            <td>{this.props.dog.dogName}</td>
-            <td>{this.props.dog.breed}</td>
-            <td>{this.props.dog.age}</td>
-            <td>{this.props.dog.numWalks}
+            <td class="center-align">{this.props.dog.dogName}</td>
+            <td class="center-align">{this.props.dog.breed}</td>
+            <td class="center-align">{this.props.dog.age}</td>
+            <td class="center-align">{this.props.dog.numWalks}
               <input type="checkbox" />
               <input type="checkbox" />
               <input type="checkbox" />
             </td>
-            <td>{this.props.dog.numFeedings}</td>
-            <td>{this.props.dog.numMeds}</td>
-            <td>
+            <td class="center-align">{this.props.dog.numFeedings}</td>
+            <td class="center-align">{this.props.dog.numMeds}</td>
+            <td class="center-align">
               <Link
                 to={{
                   pathname: "/edit",
                   state: { dog: this.props.dog }
                 }}
+                class="btn btn-small purple"
               >
-                Edit
+                <i class="material-icons">mode_edit</i>
               </Link>
             </td>
-            <td>
-              <button onClick={() => this.props.handleDeleteDog(this.props.dog._id)}>Delete</button>
+            <td class="center-align">
+              <button onClick={() => this.props.handleDeleteDog(this.props.dog._id)} class="btn btn-small red"><i class="material-icons">delete_forever</i></button>
             </td>
           </tr>
         </table>

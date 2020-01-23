@@ -36,24 +36,31 @@ class Notes extends Component {
             <>
             <form onSubmit={this.handleSubmit}>
                 <label>Notes</label>
+                <div class="row">
+                    <div class="col s10">
                 <textarea placeholder='Leave a Note' class="materialize-textarea" name="newNotes" onChange={this.handleChange}></textarea>
-                <br/>
-                <div class="center-align">
+                    </div>
+
+                <div class="col s2 center-align">
                 <button
                     type="submit"
-                    class="btn"
+                    class="btn btn-small green"
                     // disabled={this.state.invalidForm}
                     >
-                        Save 
+                        <i class="material-icons">control_point</i> 
                     </button>
                     </div>
+                </div>
+                
                     {/* <Link to='/'>CANCEL</Link> */}
             </form>
 
             {
                 this.state.notes.map(note => {
                     return(
+                        <div class=" container left-align">
                         <p>{note}</p>
+                        </div>
                     )
                 })
             }
