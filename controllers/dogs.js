@@ -20,7 +20,6 @@ async function show(req, res) {
   }
   
   async function create(req, res) {
-    console.log("HITTING!!!!")
     const dog = await Dog.create(req.body);
     res.status(201).json(dog);
   }

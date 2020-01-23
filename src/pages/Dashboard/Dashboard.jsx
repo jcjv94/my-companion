@@ -1,52 +1,19 @@
-import React from 'react';
-import Nav from '../../components/Nav/Nav';
-import './Dashboard.css';
-import AddDogPage from '../AddDogPage/AddDogPage';
-import DogGroup from '../../components/DogGroup/DogGroup';
-// import Notes from '../../components/Notes/Notes';
-// import { Route, Switch } from 'react-router-dom';
-// import EditDogPage from '../EditDogPage/EditDogPage';
+import React from "react";
+import Nav from "../../components/Nav/Nav";
+import "./Dashboard.css";
+import AddDogPage from "../AddDogPage/AddDogPage";
+import DogGroup from "../../components/DogGroup/DogGroup";
 
-const Dashboard = (props) => {
-    return (
-        <>
-        <div class="container">
-        <Nav 
-        user={props.user}
-        handleLogout={props.handleLogout}
-        />
+const Dashboard = props => {
+  return (
+    <>
+      <Nav user={props.user} handleLogout={props.handleLogout} />
+      <div class="container">
+        <AddDogPage handleAddDog={props.handleAddDog} />
 
-    {/* <Switch> */}
-
-        <AddDogPage 
-        handleAddDog={props.handleAddDog}
-        />
-
-       {/* <Route exact path='/dashboard/AddDogPage' render={({ history }) =>
-            <AddDogPage 
-            history={history}
-            handleAddDog={props.handleAddDog}
-            />
-        }/> */}
-
-        <DogGroup
-        dogs = {props.dogs}
-        handleDeleteDog={props.handleDeleteDog}
-        />
-         {/* <Route exact path='/dashboard/DogGroup' render={({ history }) =>
-            <DogGroup
-            dogs = {props.dogs}
-            history={history}
-            handleDeleteDog={props.handleDeleteDog}
-            />
-         }/> */}
-    {/* </Switch> */}
-
-        <footer className='header-footer'>
-        this is a footer
-      </footer>
+        <DogGroup dogs={props.dogs} handleDeleteDog={props.handleDeleteDog} />
       </div>
-        </>
-    );
+    </>
+  );
 };
 export default Dashboard;

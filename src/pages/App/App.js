@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import * as dogAPI from '../../utils/dogs-api';
 // import logo from './logo.svg';
 import './App.css';
@@ -9,6 +9,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
 import Dashboard from '../Dashboard/Dashboard';
 import EditDogPage from '../EditDogPage/EditDogPage';
+import LandingPage from '../LandingPage/LandingPage';
 
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
     this.setState(state => ({
       dogs: [...state.dogs, newDog]
     }),
-    () => this.props.history.push('/'));
+    () => this.props.history.push('/dashboard'));
   }
 
   handleUpdateDog = async updatedDogData => {
@@ -51,7 +52,7 @@ class App extends Component {
     );
     this.setState(
       {dogs: newDogsArray},
-      () => this.props.history.push('/')
+      () => this.props.history.push('/dashboard')
     );
   }
 
@@ -59,7 +60,7 @@ class App extends Component {
     await dogAPI.deleteOne(id);
     this.setState(state => ({
       dogs: state.dogs.filter(p => p._id !== id)
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/dashboard'));
   }
 
 
@@ -72,16 +73,18 @@ class App extends Component {
   render() {
     return (
       <>
-      <header>
-        My Compawdre
+      {/* <header>
         <nav>
+        My Compawdre
       test
         </nav>
-      </header>
+      </header> */}
       <Switch>
-        
-      <Route exact path='/' render={() =>
-      
+      <Route exact path='/' render={() => 
+        <LandingPage />  
+      }/>
+
+      <Route exact path='/dashboard' render={() =>
         <Dashboard
         user={this.state.user}
         dogs={this.state.dogs}
@@ -131,4 +134,4 @@ class App extends Component {
 //   );
 // }
 
-export default App;
+export default withRouter(App);

@@ -5,19 +5,25 @@ import './Nav.css'
 
 const Nav = (props) => {
   let nav = props.user ?
-    <div>
- {/* <Link to='/dogs' className='Nav-link'>Dogs</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
-      <Link to='' className='Nav-link' onClick={props.handleLogout}>LOG OUT</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <nav class="black">
+      <a href="/dashboard" class="brand-logo">&nbsp;&nbsp;My Compawdre</a>
+      <div class="right-align">
       <span className='Nav-welcome'>WELCOME, {props.user.name}</span>
-    </div>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to='' className='Nav-link' onClick={props.handleLogout}>LOG OUT</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </nav>
     :
-    <div>
+    <nav class="black">
+      <a href="/" class="brand-logo">&nbsp;&nbsp;My Compawdre</a>
+      <div class="right-align">
       <Link to='/login' className='NavBar-link'>LOG IN</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
-    </div>;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </nav>;
 
   return (
     <div className='NavBar'>

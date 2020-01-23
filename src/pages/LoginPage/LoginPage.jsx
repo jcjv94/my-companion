@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService';
+import Nav from '../../components/Nav/Nav';
 
 class LoginPage extends Component {
   
@@ -23,7 +24,7 @@ class LoginPage extends Component {
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage
-      this.props.history.push('/');
+      this.props.history.push('/dashboard');
     } catch (err) {
       // Invalid user data (probably duplicate email)
       alert('Invalid Credentials!');
@@ -32,27 +33,36 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="LoginPage">
-        <header className="header-footer">Log In</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+      <>
+      <Nav 
+        user={this.user}
+        handleLogout={this.handleLogout}
+        />
+
+      <div class="container">
+        <div class="container">
+        <h4 class="center-align">Log In</h4>
+        <form onSubmit={this.handleSubmit} >
+          <div>
+            <div>
+              <input type="email" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+          <div>
+            <div>
+              <input type="password" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+          <div>
+            <div class="center-align">
+              <button class="btn btn-default" >Log In</button>&nbsp;&nbsp;&nbsp;
+              <Link to='/'class="btn btn-small red"><i class="material-icons">cancel</i></Link>
             </div>
           </div>
         </form>
+        </div>
       </div>
+      </>
     );
   }
 }
