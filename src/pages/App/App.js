@@ -73,7 +73,7 @@ class App extends Component {
     return (
       <>
       <header>
-        My Companion
+        My Compawdre
         <nav>
       test
         </nav>
