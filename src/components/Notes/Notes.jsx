@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import * as dogAPI from '../../utils/dogs-api';
 import './Notes.css';
+import NoteList from '../NotesList/NotesList';
 
 class Notes extends Component {
 
@@ -27,12 +28,6 @@ class Notes extends Component {
         });
     };
 
-    componentDidMount() {
-        this.setState({
-            notes: this.props.dog.notes
-        })
-    }
-
     render () {
         return (
             <>
@@ -57,15 +52,10 @@ class Notes extends Component {
                     {/* <Link to='/'>CANCEL</Link> */}
             </form>
 
-            {
-                this.props.dog.notes.map(note => {
-                    return(
-                        <div class=" container left-align">
-                        <p>{note}</p>
-                        </div>
-                    )
-                })
-            }
+            <NoteList 
+            notesList = {this.props.dog.notes}
+            />
+
             </>
         )
     }

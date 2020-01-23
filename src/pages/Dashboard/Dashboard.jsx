@@ -26,7 +26,6 @@ class Dashboard extends Component {
         {this.state.selectedDog ? <DogDetailPage 
                 dog={this.state.selectedDog}
                 handleDeleteDog={this.props.handleDeleteDog}
-                refresh={this.refresh}
                 /> : ''
         }
         
