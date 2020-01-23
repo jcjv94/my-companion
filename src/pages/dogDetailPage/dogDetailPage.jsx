@@ -63,7 +63,10 @@ class dogDetailPage extends Component {
             </th>
             <th class="center-align">
               <button
-                onClick={() => this.props.handleDeleteDog(this.props.dog._id)}
+                onClick={() => {
+                  this.props.refresh()
+                  this.props.handleDeleteDog(this.props.dog._id)}
+                } 
                 class="btn btn-small red"
               >
                 <i class="material-icons">delete_forever</i>
@@ -75,21 +78,21 @@ class dogDetailPage extends Component {
             <th class="">Walks: {this.props.dog.numWalks}</th>
             {walks.map(walk => walk)}
 
-            {/* <input type="checkbox" /> */}
+            <input type="checkbox" />
           </tr>
 
           <tr>
             <th class="">Feedings: {this.props.dog.numFeedings}</th>
             {feedings.map(feedings => feedings)}
 
-            {/* <input type="checkbox" /> */}
+            <input type="checkbox" />
           </tr>
 
           <tr>
             <th class="">Medications: {this.props.dog.numMeds}</th>
             {meds.map(meds => meds)}
 
-            {/* <input type="checkbox" /> */}
+            <input type="checkbox" />
           </tr>
         </table>
         <br />

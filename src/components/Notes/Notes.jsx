@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-// import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import * as dogAPI from '../../utils/dogs-api';
 import './Notes.css';
 
 class Notes extends Component {
 
     state = {
-        notes: [],
+        notes: [ ],
         newNotes: ''
     };
 
@@ -15,8 +15,10 @@ class Notes extends Component {
         const updatedNotes = await dogAPI.addNote(this.state.newNotes, this.props.dog._id)
         console.log(updatedNotes)
         this.setState({
-            notes: updatedNotes
+            notes: updatedNotes,
+            newNotes: ''
         })
+        this.props.history.push('/dashboard');
     };
 
     handleChange = e => {
@@ -38,7 +40,7 @@ class Notes extends Component {
                 <label>Notes</label>
                 <div class="row">
                     <div class="col s10">
-                <textarea placeholder='Leave a Note' class="materialize-textarea" name="newNotes" onChange={this.handleChange}></textarea>
+                <textarea placeholder='Leave a Note' class="materialize-textarea" value={this.state.newNotes} name="newNotes" onChange={this.handleChange}></textarea>
                     </div>
 
                 <div class="col s2 center-align">
@@ -56,7 +58,7 @@ class Notes extends Component {
             </form>
 
             {
-                this.state.notes.map(note => {
+                this.props.dog.notes.map(note => {
                     return(
                         <div class=" container left-align">
                         <p>{note}</p>
@@ -69,4 +71,4 @@ class Notes extends Component {
     }
 }
 
-export default Notes;
+export default withRouter(Notes);
