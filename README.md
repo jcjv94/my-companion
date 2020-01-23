@@ -1,6 +1,9 @@
-# My-Companion
+# My Compawdre
 
-[Click to Launch](https://google.com/)
+[Click to Launch](https://my-compawdre.herokuapp.com/)
+
+[Trello](https://trello.com/b/3QyWQqRW/sei-project-4-dog-wellness)
+
 
 ### Purpose:
 
