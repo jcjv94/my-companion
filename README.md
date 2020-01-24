@@ -11,7 +11,7 @@ The purpose of this project is to keep a track of your dogs health and well-bein
 
 ### Walkthrough:
 
-![View Walkthrough](https://google.com/)
+![Screenshot](https://i.imgur.com/ChH8aJu.png)
 
 
 ### Technologies Used:

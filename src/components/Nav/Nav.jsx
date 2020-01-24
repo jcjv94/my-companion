@@ -16,7 +16,7 @@ const Nav = (props) => {
     </nav>
     :
     <nav class="black">
-      <a href="/" class="brand-logo">&nbsp;&nbsp;My Compawdre</a>
+      {/* <a href="/" class="brand-logo">&nbsp;&nbsp;My Compawdre</a> */}
       <div class="right-align">
       <Link to='/login' className='NavBar-link'>LOG IN</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;

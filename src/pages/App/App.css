@@ -16,11 +16,23 @@
 .App-link {
   color: #61dafb;
 }
-/* 
-html, body {
-  height: 100%;
+
+#woof {
+
+  position: fixed;
+  bottom: 0px;
+  left: 40%;
+
+}
+
+
+/* html, body {
+  background-image: url('https://i.imgur.com/oUdVDJD.png');
+  background-repeat: no-repeat;
+  background-position: center bottom; */
+  /* height: 100%;
   font: 1rem sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
-} */
+  align-items: center; */
+/* } */

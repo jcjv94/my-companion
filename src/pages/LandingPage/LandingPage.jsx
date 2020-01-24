@@ -7,7 +7,12 @@ class LandingPage extends Component {
     return (
       <>
         <Nav user={this.user} handleLogout={this.handleLogout} />
-        <h1>My Compawdre</h1>
+        <div class="container">
+        <br/>
+        <h2 class="center-align">My Compawdre</h2>
+        <h6 class="center-align">A Dog Wellness App. <br/><br/> Sign up for free!</h6>
+        <div id="woof" class="center-align"><img src="https://i.imgur.com/oUdVDJD.png" alt="pack" /></div>
+        </div>
       </>
     );
   }

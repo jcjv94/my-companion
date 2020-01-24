@@ -25,7 +25,7 @@ class Notes extends Component {
             notes: updatedNotes,
             newNotes: ''
         }),
-       () =>  this.props.history.push('/dashboard'));
+       () => this.props.history.push('/dashboard'));
     };
 
     handleChange = e => {
@@ -55,7 +55,7 @@ class Notes extends Component {
                     </div>
                 </div>
                 
-                    {/* <Link to='/'>CANCEL</Link> */}
+                    
             </form>
 
             <NoteList 
