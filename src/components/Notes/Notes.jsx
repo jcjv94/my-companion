@@ -21,11 +21,11 @@ class Notes extends Component {
         e.preventDefault();
         const updatedNotes = await dogAPI.addNote(this.state.newNotes, this.props.dog._id)
         console.log(updatedNotes)
-        this.setState({
+        this.setState(state => ({
             notes: updatedNotes,
             newNotes: ''
-        })
-        // this.props.history.push('/dashboard');
+        }),
+       () =>  this.props.history.push('/dashboard'));
     };
 
     handleChange = e => {
