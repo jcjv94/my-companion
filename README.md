@@ -7,9 +7,9 @@
 
 ### Purpose:
 
-The purpose of this project is to keep a track of your dogs health and well-being daily. It is used as a way for users to communicate to others that the dog has been taken care of as needed and if they had any problems or issues through out the day.
+The purpose of this project is to keep a track of your dogs health and well-being daily. It is used as a way for users to record and communicate to others that the dog has been walked, fed, and medicated. You can also leave notes on each dog as needed.
 
-### Walkthrough:
+### Screenshot:
 
 ![Screenshot](https://i.imgur.com/ChH8aJu.png)
 

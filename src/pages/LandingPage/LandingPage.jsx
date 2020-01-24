@@ -10,7 +10,7 @@ class LandingPage extends Component {
         <div class="container">
         <br/>
         <h2 class="center-align">My Compawdre</h2>
-        <h6 class="center-align">A Dog Wellness App. <br/><br/> Sign up for free!</h6>
+        <h6 class="center-align">Keep a track of your dogs health and well-being daily <br/><br/> Sign up for free!</h6>
         <div id="woof" class="center-align"><img src="https://i.imgur.com/oUdVDJD.png" alt="pack" /></div>
         </div>
       </>
