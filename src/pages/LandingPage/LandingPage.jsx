@@ -6,7 +6,7 @@ class LandingPage extends Component {
   render() {
     return (
       <>
-        <Nav user={this.user} handleLogout={this.handleLogout} />
+        <Nav user={this.props.user} handleLogout={this.props.handleLogout} />
         <div class="container">
         <br/>
         <h2 class="center-align">My Compawdre</h2>
