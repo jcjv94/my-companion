@@ -11,6 +11,12 @@ class Notes extends Component {
         newNotes: ''
     };
 
+    componentDidMount() {
+        this.setState({
+            notes: this.props.dog.notes
+        })
+    }
+
     handleSubmit = async(e) => {
         e.preventDefault();
         const updatedNotes = await dogAPI.addNote(this.state.newNotes, this.props.dog._id)
@@ -19,7 +25,7 @@ class Notes extends Component {
             notes: updatedNotes,
             newNotes: ''
         })
-        this.props.history.push('/dashboard');
+        // this.props.history.push('/dashboard');
     };
 
     handleChange = e => {
@@ -53,7 +59,7 @@ class Notes extends Component {
             </form>
 
             <NoteList 
-            notesList = {this.props.dog.notes}
+                notesList = {this.props.dog.notes}
             />
 
             </>

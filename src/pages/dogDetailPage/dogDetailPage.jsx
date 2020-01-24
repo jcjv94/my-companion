@@ -64,7 +64,6 @@ class dogDetailPage extends Component {
             <th class="center-align">
               <button
                 onClick={() => {
-                  this.props.refresh()
                   this.props.handleDeleteDog(this.props.dog._id)}
                 } 
                 class="btn btn-small red"
