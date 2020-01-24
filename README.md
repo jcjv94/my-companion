@@ -23,4 +23,5 @@ The purpose of this project is to keep a track of your dogs health and well-bein
 
 - Add dog profile pictures.
 - Add vaccines information and expiration notifications.
+- Invite users to specific dog groups
 
