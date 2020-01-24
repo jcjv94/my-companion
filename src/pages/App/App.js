@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import * as dogAPI from '../../utils/dogs-api';
-// import logo from './logo.svg';
 import './App.css';
-// import Nav from '../../components/Nav/Nav';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
@@ -73,12 +71,6 @@ class App extends Component {
   render() {
     return (
       <>
-      {/* <header>
-        <nav>
-        My Compawdre
-      test
-        </nav>
-      </header> */}
       <Switch>
       <Route exact path='/' render={() => 
         <LandingPage />  
